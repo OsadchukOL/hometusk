@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+    //1
+    function mensheeChislo(pervoe, vtoroe) {
+      if (pervoe < vtoroe) {
+        return pervoe;
+      } else {
+        return vtoroe;
+      }
+    }
+
+    let pervoe = prompt("Vvedi pervoe chislo:");
+    let vtoroe = prompt("Vvedi vtoroe chislo:");
+    alert("Menshee chislo: " + mensheeChislo(pervoe, vtoroe));
+
+    //2
+    function stepenChisla(chislo, stepen) {
+      let rezultat = chislo;
+      for (let i = 1; i < stepen; i++) {
+        rezultat *= chislo;
+      }
+      return rezultat;
+    }
+
+    let chislo = prompt("Vvedi chislo:", "10");
+    let stepen = prompt("Vvedi stepen:", "2");
+    alert("Rezultat: " + stepenChisla(chislo, stepen));
+
+    //3
+    function prostoyKalkulyator(a, b, znak) {
+      if (znak == "+") {
+        return a + b;
+      } else if (znak == "-") {
+        return a - b;
+      } else if (znak == "*") {
+        return a * b;
+      } else if (znak == "/") {
+        if (b == 0) {
+          return "Oshibka: delit na nol nelzya!";
+        } else {
+          return a / b;
+        }
+      } else {
+        return "Neizvestnaya operatsiya";
+      }
+    }
+
+    let chisloA = prompt("Vvedi pervoe chislo:", "10");
+    let chisloB = prompt("Vvedi vtoroe chislo:", "2");
+    let znak = prompt("Vvedi znak (+, -, *, /):", "+");
+    alert("Rezultat: " + prostoyKalkulyator(chisloA, chisloB, znak));
+
+    //4
+    function proverkaChetnoe(chislo) {
+      if (chislo < 0) {
+        chislo = -chislo;
+      }
+      if (chislo == 0) {
+        return true;
+      } else if (chislo == 1) {
+        return false;
+      } else {
+        return proverkaChetnoe(chislo - 2);
+      }
+    }
+
+    let proverka = prompt("Vvedi chislo dlya proverki:", "10");
+
+    if (proverkaChetnoe(proverka)) {
+      alert("Chislo chetnoe");
+    } else {
+      alert("Chislo nechetnoe");
+    }
+  </script>
+
+</body>
+</html>
